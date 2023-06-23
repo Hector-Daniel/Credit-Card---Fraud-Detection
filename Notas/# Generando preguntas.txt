@@ -1,0 +1,35 @@
+# Generando preguntas
+
+#Preguntas del data set
+#Cuantos renglones y columnas tiene
+#Tiene missings
+
+
+#Para cada variable
+# Distancia desde la casa: min, max, median, mean, std
+# Distancia desde la última transacción: min, max, median, mean, std
+# Ratio del precio medio de compra: min, max, median, mean, std
+# Repeat retailer cuantos ceros hay y cuantos unos hay
+# used chip cuantos ceros hay y cuantos unos hay
+# used pin number cuantos ceros hay y cuantos unos hay
+# online order number cuantos ceros hay y cuantos unos hay
+# fraud order number cuantos ceros hay y cuantos unos hay
+
+#Correlaciones
+# Distancias media, min y max por fraude y no fraude
+# Ratios por fraude y no fraude
+# Cuadritos de conteo de las binarias vs fraude
+
+# Creación de nuevas variables
+# Una binaria que sea: Si la distancia desde la última transacción es alta, fue una compra en línea y no se uso chip ni pin entonces 1 de lo contrario 0
+# si no se uso chip ni nip es tarejta no presente, de lo contrario es tarjeta presente
+
+# Correlación con las nuevas variables y el fraude
+
+
+df_decil_no_fraud = df_ratio[df_ratio['fraud']==0]['rangos_ratio']
+
+plt.hist([df_decil_fraud, df_decil_no_fraud], label=['Fraud','No fraud'])
+plt.title('Histograma raatio de compra media')
+plt.legend(prop={'size':10})
+plt.show()
